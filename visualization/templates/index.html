@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Big Data Project {% endblock %}</h1>
+
+<div class="card m-2 p-2">
+    <h3>1. Most Winning Team</h3>
+    <i>
+        <p>
+            {{most_winning_team}}
+        </p>
+    </i>
+
+
+</div>
+
+
+<div class="card m-2 p-2 table-responsive">
+    <h3>2. Batsman Strike Rate </h3>
+    <div class="table-reponsive" style="height: 400px;overflow: scroll;">
+
+        <table id="data" class="table table-fixed table-striped thead-light overflow-auto">
+            <thead>
+                <tr>
+                    <th>Runs</th>
+                    <th>Balls</th>
+                    <th>Batsman</th>
+                    <th>Strike Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in batsman_strike_rate %}
+                <tr>
+                    {%for cell in row %}
+                    <td>
+                        {{cell}}
+                    </td>
+                    {%endfor%}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card m-2 p-2 table-responsive">
+    <h3>3. Bowler Economy Rate </h3>
+    <div class="table-reponsive" style="height: 400px;overflow: scroll;">
+
+        <table id="data" class="table table-fixed table-striped thead-light overflow-auto">
+            <thead>
+                <tr>
+                    <th>Runs Given</th>
+                    <th>Bowler</th>
+                    <th>Overs</th>
+                    <th>Economy</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in bowler_economy_rate %}
+                <tr>
+                    {%for cell in row %}
+                    <td>
+                        {{cell}}
+                    </td>
+                    {%endfor%}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="card m-2 p-2 table-responsive">
+    <h3>4. Home Away Stats </h3>
+    <div class="table-reponsive" style="height: 400px;overflow: scroll;">
+
+        <table id="data" class="table table-fixed table-striped thead-light overflow-auto">
+            <thead>
+                <tr>
+                    <th>Team Name</th>
+                    <th>Home Win</th>
+                    <th>Away Win</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in home_away_stats %}
+                <tr>
+                    {%for cell in row %}
+                    <td>
+                        {{cell}}
+                    </td>
+                    {%endfor%}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card m-2 p-2 table-responsive">
+    <h3>5. Players Teams Count </h3>
+    <div class="table-reponsive" style="height: 400px;overflow: scroll;">
+
+        <table id="data" class="table table-fixed table-striped thead-light overflow-auto">
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Teams</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in player_teams_count %}
+                <tr>
+                    {%for cell in row %}
+                    <td>
+                        {{cell}}
+                    </td>
+                    {%endfor%}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card m-2 p-2 table-responsive">
+    <h3>6. 2017 Season Batsman Stats </h3>
+    <div class="table-reponsive" style="height: 400px;overflow: scroll;">
+
+        <table id="data" class="table table-fixed table-striped thead-light overflow-auto">
+            <thead>
+                <tr>
+                    <th>Runs</th>
+                    <th>Balls</th>
+                    <th>Batsman</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in season_batsman_stats_2017 %}
+                <tr>
+                    {%for cell in row %}
+                    <td>
+                        {{cell}}
+                    </td>
+                    {%endfor%}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card m-2 p-2 table-responsive">
+    <h3>7. Batsman Growth from 2016 to 2017 </h3>
+    <div class="table-reponsive" style="height: 400px;overflow: scroll;">
+
+        <table id="data" class="table table-fixed table-striped thead-light overflow-auto">
+            <thead>
+                <tr>
+                    <th>Batsman</th>
+                    <th>Runs(2016)</th>
+                    <th>Runs(2017)</th>
+                    <th>Average Runs</th>
+                    <th>Growth_Rate(%)</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in season_batsman_percentage_growth_2016_2017 %}
+                <tr>
+                    {%for cell in row %}
+                    <td>
+                        {{cell}}
+                    </td>
+                    {%endfor%}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card m-2 p-2 table-responsive">
+    <h3>8. Wickets Taken by Bowlers in 2017 </h3>
+    <div class="table-reponsive" style="height: 400px;overflow: scroll;">
+
+        <table id="data" class="table table-fixed table-striped thead-light overflow-auto">
+            <thead>
+                <tr>
+                    <th>Wickets</th>
+                    <th>Bowler</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in season_bowler_stats_2017 %}
+                <tr>
+                    {%for cell in row %}
+                    <td>
+                        {{cell}}
+                    </td>
+                    {%endfor%}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card m-2 p-2 table-responsive">
+    <h3>9. Bowlers Economy Rate 2017 </h3>
+    <div class="table-reponsive" style="height: 400px;overflow: scroll;">
+
+        <table id="data" class="table table-fixed table-striped thead-light overflow-auto">
+            <thead>
+                <tr>
+                    <th>Runs Given</th>
+                    <th>Bowler</th>
+                    <th>Overs</th>
+                    <th>Economy</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in season_bowler_economy_stats_2017 %}
+                <tr>
+                    {%for cell in row %}
+                    <td>
+                        {{cell}}
+                    </td>
+                    {%endfor%}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card m-2 p-2">
+    <h3>10.Chance of winning the game if a team wins the toss</h3>
+    <i>
+        <p>
+            {{winning_chance_for_toss_win}}
+        </p>
+    </i>
+
+
+</div>
+
+{% endblock %}

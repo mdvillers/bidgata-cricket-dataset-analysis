@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}- FlaskApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <hr>
+        {% block content %}{% endblock %}
+    </div>
+    {% block scripts %}{% endblock %}
+</body>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 text-xs">
+        &copy; Copyright 2022 &nbsp; <a href="https://aryalmadhav.com.np/"> Madhav Aryal </a> &nbsp; Prajwol Gyawali
+        &nbsp; Kritan Banstola &nbsp; Gaurav Pokharel
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+</html>
